@@ -8,7 +8,6 @@ export default function Login() {
 
 	return (
 		<form
-			method="POST"
 			className="flex flex-col w-96 m-auto space-y-4"
 			onSubmit={(e) => {
 				e.preventDefault();

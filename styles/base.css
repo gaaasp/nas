@@ -9,7 +9,7 @@
 	--accent-6: #4f4f4f;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
 	:root {
 		--foreground: #fff;
 		--background: #000;
