@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getSystemLogs } from "utils";
+import { getSystemLogs } from "lib";
 
 export default async function SystemLogs(
 	req: NextApiRequest,

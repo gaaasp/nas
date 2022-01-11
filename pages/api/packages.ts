@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getPackages } from "utils";
+import { getPackages } from "lib";
 
 export default async function Packages(
 	req: NextApiRequest,

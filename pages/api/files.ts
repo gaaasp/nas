@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getFiles, getShares } from "utils";
+import { getFiles, getShares } from "lib";
 
 export default async function Files(req: NextApiRequest, res: NextApiResponse) {
 	const files = req.query.path

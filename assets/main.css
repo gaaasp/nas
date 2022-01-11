@@ -1,0 +1,62 @@
+@tailwind base;
+@layer base {
+	html,
+	body,
+	#__next {
+		@apply h-full;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+	}
+	:root {
+		--background: #fff;
+		--foreground: #000;
+		--accent-1: #fafafa;
+		--accent-2: #eaeaea;
+		--accent-3: #999;
+		--accent-4: #888;
+		--accent-5: #666;
+		--accent-6: #444;
+		--accent-7: #333;
+		--accent-8: #111;
+		--blue: #0070f3;
+		--green: #0cce6b;
+		--red: #ef4444;
+	}
+
+	@media screen {
+		.dark {
+			--background: #000;
+			--foreground: #fff;
+		}
+	}
+
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input[type="number"] {
+		-moz-appearance: textfield;
+	}
+
+	input,
+	textarea,
+	select {
+		@apply focus:outline-none;
+	}
+}
+
+@tailwind components;
+@layer components {
+	.form-tick {
+		background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M28 14L17 25L12 20' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+		background-position: 50%;
+		background-size: 100% 100%;
+		@apply bg-no-repeat border-transparent bg-transparent;
+	}
+}
+
+@tailwind utilities;

@@ -1,47 +1,44 @@
-import { Input, Button } from "components";
+import { Wrapper } from "components/common";
+import { Password } from "components/input";
+import { Input, Button, Form } from "components/ui";
 import { useRouter } from "next/router";
-import { useState } from "react";
 
 export default function Login() {
 	const { push } = useRouter();
-	const [form, setForm] = useState({ username: "", password: "" });
 
 	return (
-		<form
-			className="flex flex-col w-96 m-auto space-y-4"
-			onSubmit={(e) => {
-				e.preventDefault();
-				e.defaultPrevented;
-				fetch("/api/login", {
-					body: JSON.stringify(form),
-					method: "POST",
-				}).then(({ ok }) => ok && push("/"));
-			}}
-		>
-			<Input
-				name="username"
-				placeholder="Nom d'utilisateur"
-				value={form.username}
-				onChange={({ target }) =>
-					setForm((form) => ({
-						...form,
-						username: target.value,
-					}))
+		<Wrapper title="Se connecter" className="flex items-center justify-center">
+			<Form
+				className="flex flex-col w-96 m-auto space-y-4"
+				onSubmit={({ value }) =>
+					fetch("/api/login", {
+						body: JSON.stringify(value),
+						method: "POST",
+					}).then(({ ok }) => ok && push("/"))
 				}
-			/>
-			<Input
-				name="password"
-				placeholder="Mot de passe"
-				type="password"
-				value={form.password}
-				onChange={({ target }) =>
-					setForm((form) => ({
-						...form,
-						password: target.value,
-					}))
-				}
-			/>
-			<Button type="submit">Se connecter</Button>
-		</form>
+				disabled={() => ({})}
+				errors={{}}
+				value={{ username: "", password: "" }}
+			>
+				{({ value }) => (
+					<>
+						<Input
+							name="username"
+							placeholder="Nom d'utilisateur"
+							value={value.username}
+						/>
+						<Password
+							name="password"
+							placeholder="Mot de passe"
+							type="password"
+							value={value.password}
+						/>
+						<Button type="submit" width="w-full">
+							Se connecter
+						</Button>
+					</>
+				)}
+			</Form>
+		</Wrapper>
 	);
 }

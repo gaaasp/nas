@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getStorage } from "utils";
+import { getStorage } from "lib";
 
 export default async function Storage(
 	req: NextApiRequest,

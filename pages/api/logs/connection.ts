@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getConnectionLogs } from "utils";
+import { getConnectionLogs } from "lib";
 
 export default async function ConnectionLogs(
 	req: NextApiRequest,

@@ -39,5 +39,5 @@ export type Logs = Array<{
 	type: string;
 	message: string;
 	date: string;
-	level: string;
+	level: string | "info" | "warn";
 }>;

@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getSystem } from "utils";
+import { getSystem } from "lib";
 
 export default async function System(
 	req: NextApiRequest,
