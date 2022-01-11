@@ -35,7 +35,7 @@ export const Tabs = ({ tabs }: TabsProps) => {
 	}, [selected]);
 
 	return (
-		<nav className="w-full max-w-6xl px-4 mx-auto overflow-auto relative print:hidden">
+		<nav className="w-full max-w-6xl px-4 mx-auto overflow-auto relative">
 			{selectedHTML && (
 				<div
 					className="absolute bottom-0 h-0.5 bg-foreground transition"

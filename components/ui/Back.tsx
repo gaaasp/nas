@@ -11,7 +11,7 @@ export const Back = (props: BackProps) => {
 		<Text
 			as="button"
 			onClick={() => back()}
-			className="text-blue hover:underline print:hidden"
+			className="text-blue hover:underline"
 			{...props}
 		>
 			← Retour
